@@ -1,12 +1,10 @@
 const ceaserCipher = require("./ceasarCipher");
 
 test("changes each letter from the string to the next letter of the alphabet", () => {
-  expect(ceaserCipher("abcdefghijklmnopqrstuvwxyz")).toBe(
+  expect(ceaserCipher("abcdefghijklmnopqrstuvwxyz", +1)).toBe(
     "bcdefghijklmnopqrstuvwxyza"
   );
 });
-test.skip("works with sentances", () => {
-  expect(ceaserCipher("defend the east wall of the castle")).toBe(
-    "efgfoe uif fbtu xbmm pg uif dbtumf"
-  );
+test("with larger shifts", () => {
+  expect(ceaserCipher("attack", 24)).toBe("yrryai");
 });
